@@ -1,3 +1,4 @@
+from flask import (Flask, render_template)
 import json
 import sqlite3
 from flask import Flask
@@ -8,7 +9,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return "Hi! You've reached index! Go to https://sa-flask-basic-app.herokuapp.com/api/hello-world to see the api!"
+    return render_template("index.html")
 
 @app.route('/api/hello-world')
 def hello_world():
